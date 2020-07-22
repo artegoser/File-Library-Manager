@@ -1,3 +1,5 @@
 {
-  "update": {"name": "database.LFL", "url": "https://raw.githubusercontent.com/artegoser/Large-File-Library/master/Databases/database.LFL"}  
+  "update": {"name": "database.LFL", "url": "https://raw.githubusercontent.com/artegoser/Large-File-Library/master/Databases/database.LFL"}, 
+  "genernationen": {"name": "GenerNationEN.py", "url": "https://raw.githubusercontent.com/artegoser/GenerNation/master/GenerNation/GenerNationEN.py"},
+  "genernationru": {"name": "GenerNationRU.py", "url": "https://raw.githubusercontent.com/artegoser/GenerNation/master/GenerNation/GenerNationRU.py"}
 }
