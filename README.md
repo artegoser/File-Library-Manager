@@ -4,6 +4,33 @@
 ![GitHub watchers](https://img.shields.io/github/watchers/artegoser/Large-File-Library)
 ![GitHub repo size](https://img.shields.io/github/repo-size/artegoser/Large-File-Library)
 ![GitHub All Releases](https://img.shields.io/github/downloads/artegoser/Large-File-Library/total)
+## More About 
+CLI application for reading and creating LFL 
+libraries.  The standard library will be updated 
+all the time.  The original library can serve as 
+a repository of data about files by name, this 
+provides quick access to the files you need.
+LFL libraries are convenient because 
+* you can 
+create a whole package of files that can be 
+downloaded with just one command.
+
+-------
+
+CLI приложение для считывания и создания LFL 
+библиотек. Стандартная библиотека будет 
+дополнятся все время. Оригинальная библиотека 
+может служить как хранилище данных о файлах по 
+имени, это обеспечивает быстрый доступ к нужным 
+файлам.
+LFL библиотеки удобны тем 
+* что вы можете создать 
+целый пакет файлов который можно будет скачать 
+всего одной командой.
+
+## Installation
+    Coming soon... 
+
 ## Commands
 	LFL - Must be added to each LFL command  (is not a separate command for LFL) 
 
