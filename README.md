@@ -22,3 +22,9 @@
 	                          + install file-title-in-local-library - installs the desired file from the local library  
 	                          + dbinstall - downloads completely files from the local library  
 	                          + list - gets the filenames of the linked files and names from the local library
+
+
+### Help wanted! / Требуется помощь! 
+> We need an English translator.  Most of the words here have been translated using google translator.  If you know Russian and English you can contribute to the project.  
+
+> Нам нужен переводчик на английский. Большинство слов здесь переведено с помощью гугл переводчика. Если вы знаете русский и английский вы можете внести вклад в проект.
