@@ -1,5 +1,9 @@
 # Large-File-Library
 
+![GitHub](https://img.shields.io/github/license/artegoser/Large-File-Library)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/artegoser/Large-File-Library)
+![GitHub watchers](https://img.shields.io/github/watchers/artegoser/Large-File-Library)
+![GitHub repo size](https://img.shields.io/github/repo-size/artegoser/Large-File-Library)
 ![GitHub All Releases](https://img.shields.io/github/downloads/artegoser/Large-File-Library/total)
 ## Commands
 	LFL - Must be added to each LFL command  (is not a separate command for LFL) 
