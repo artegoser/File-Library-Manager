@@ -2,8 +2,8 @@
 
 ## LFL 0.0.3 version
 
-* db info - узнать наименование, 
+* db info filename - узнать наименование, 
 имя и ссылку на файл в глобальной библиотеке
-* localdb localdbname.LFL info - узнать 
+* localdb localdbname.LFL info filename - узнать 
 наименование, имя и ссылку на файл в локальной 
 библиотеке
