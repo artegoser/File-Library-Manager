@@ -70,6 +70,7 @@ try:
 except: 
     pass
 
+
 if s in ["install"]:
     print("I update the LFL database")
     hidedownload(url=databasedownload["update"]["url"], name=databasedownload["update"]["name"])
@@ -90,25 +91,38 @@ if s in ["install"]:
 elif s in["version"]:
     print("Version of Large File Library - "+ version+"\n")
 
+#DB working with globallibrary   -------------------------------------------------------------------------------------------------------------------------------------------------------
 elif s in["db"]:   #Семейство db
-    if s2 in["list"]:
-        print("I update the LFL database")
-        hidedownload(url=databasedownload["update"]["url"], name=databasedownload["update"]["name"])
 
-        with open("database.LFL", "r", encoding = "utf-8") as data:
-            database = json.load(data)
-        os.remove("database.LFL")
+
+    print("\nI update the LFL database")
+    hidedownload(url=databasedownload["update"]["url"], name=databasedownload["update"]["name"])
+
+    with open("database.LFL", "r", encoding = "utf-8") as data:
+        database = json.load(data)
+    os.remove("database.LFL")
    
-        print("The database has been updated.")
+    print("The database has been updated.\n")
 
+
+    if s2 in["list"]:
+        
         for title in database.keys():
             print("\nTitle: "+title)
             print("URL: "+database[title]["url"])
             print("Name: "+database[title]["name"]+"\n")
+
+    elif s2 in["info"]: #s3 имя файла
+
+        print("\nTitle: "+s3)
+        print("URL: "+database[s3]["url"])
+        print("Name: "+database[s3]["name"]+"\n")
+
     else:
         print("There is no such command.")
 
-elif s in["localdb"]: #семейство localdb
+#LDB working with locallibraries ------------------------------------------------------------------------------------------------------------------------------------------------
+elif s in["ldb"]: #семейство ldb
             #s2 название локальной базы данных
     if s3 in["list"]:
         try:
@@ -122,6 +136,16 @@ elif s in["localdb"]: #семейство localdb
 
         except:
             print("The "+s2+" library file does not exist or it cannot be read")
+
+
+    elif s3 in["info"]: #s4 имя файла
+        with open(s2, "r", encoding = "utf-8") as data:
+            localdb = json.load(data)
+        print("\nTitle: "+s4)
+        print("URL: "+localdb[s4]["url"])
+        print("Name: "+localdb[s4]["name"]+"\n")
+
+
     elif s3 in["install"]:
         #s4 имя файла
         try:
