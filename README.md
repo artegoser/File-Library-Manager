@@ -44,7 +44,7 @@ LFL библиотеки удобны тем
 	     + list - Gets file names, links to them and names from the global library  
 	
 
-	LFL localdb localdbname.LFL - Working with local libraries  (is not a separate command for LFL) 
+	LFL ldb localdbname.LFL - Working with local libraries  (is not a separate command for LFL) 
 	                          + create - Creates a local library  
 	                          + add title name url - Adds a block to the local library  
 	                          + install file-title-in-local-library - installs the desired file from the local library  
