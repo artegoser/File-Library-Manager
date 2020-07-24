@@ -1,9 +1,10 @@
 # Команды которые нужно сделать
 
 ## LFL 0.0.3 version
-
-* db info filename - узнать наименование, 
+### NEW commands
+> * ldb instead of localdb  
+> * db info filename - узнать наименование, 
 имя и ссылку на файл в глобальной библиотеке
-* localdb localdbname.LFL info filename - узнать 
+> * ldb localdbname.LFL info filename - узнать 
 наименование, имя и ссылку на файл в локальной 
 библиотеке
