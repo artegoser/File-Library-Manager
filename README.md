@@ -30,7 +30,7 @@ LFL библиотеки удобны тем
 всего одной командой.
 
 ## Installation
-    Coming soon... 
+[Installation guide](https://github.com/artegoser/Large-File-Library/wiki/installation "installation guide") 
 
 ## Commands
 	LFL - Must be added to each LFL command  (is not a separate command for LFL) 
