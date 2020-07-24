@@ -32,7 +32,7 @@ LFL библиотеки удобны тем
 ## Installation
 [Installation guide](https://github.com/artegoser/Large-File-Library/wiki/installation "installation guide") 
 
-## Commands for the latest version LFL (0.0.3)
+## Commands for the latest version LFL (0.0.4)
 	LFL - Must be added to each LFL command  (is not a separate command for LFL) 
 
 
@@ -43,15 +43,21 @@ LFL библиотеки удобны тем
 	LFL db - Working with the global library (is not a separate command for LFL) 
 	     + list - Gets file names, links to them and names from the global library  
 	     + info filetitle - Reads the title, name and link to a file in the global library
+		 + cat filetitle - reading a file without downloading in the global library
 	
 
 	LFL ldb localdbname.LFL - Working with local libraries  (is not a separate command for LFL) 
-	                          + create - Creates a local library  
-	                          + add title name url - Adds a block to the local library  
-	                          + install file-title-in-local-library - installs the desired file from the local library  
-	                          + dbinstall - downloads completely files from the local library  
-	                          + list - gets the filenames of the linked files and names from the local library
-				  + info filetitle - Reads the title, name and link to a file in the local library
+	                      + create - Creates a local library  
+	                      + add title name url - Adds a block to the local library  
+	                      + install file-title-in-local-library - installs the desired file from the local library  
+	                      + dbinstall - downloads completely files from the local library  
+	                      + list - gets the filenames of the linked files and names from the local library
+				          + info filetitle - Reads the title, name and link to a file in the local library
+						  + cat filetitle - reading a file without downloading in the local library
+					      + merge(or combine) secondlocaldb.LFL to finishlocaldb.LFL(optional) - merging libraries, 
+																							     if you don't write "to finish 
+																								 localdb.LFL" the merged library 
+																								 will be written to firstlocaldb.LFL
 
 
 ### Help wanted! / Требуется помощь! 

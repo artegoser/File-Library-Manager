@@ -16,3 +16,14 @@
 ### Commands Added
 1. ldb localdbname.LFL info 
 2. db info
+
+## LFL 0.0.4
+### Commands Added
+  
+1. db cat
+2. ldb localdb.LFL cat
+3. ldb firstlocaldb.LFL merge(***or combine***) secondlocaldb.LFL ***to finishlocaldb.LFL(optional)***
+
+### Bug fixes! 
+
+1. Exception handlers
