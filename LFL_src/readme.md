@@ -1,8 +1,12 @@
 ## 1. Before starting the compiler, install the libraries from requirements.txt. Python version 3.6
 
-The compiled version is in the dist folder
+The compiled version is in the dist folder. Move the LFL.exe file from the dist folder here
 
-## 2. add_to_path.bat
+## 2.1 Adding to path LFL.exe
+
+[Installing](https://github.com/artegoser/Large-File-Library/wiki/installation "installation guide")
+
+## 2.2 add_to_path.bat (not_recommended)
 
 	Attention! This solution can be destructive as Windows 
 	truncates the PATH to 1024 characters. Make sure 
@@ -10,5 +14,6 @@ The compiled version is in the dist folder
 
 
 ***LFL is not responsible for your actions***  
+
 
 **If you want to automatically add LFL to the system PATH variable, run add_to_path.bat as administrator, the variable is set only to the current user**
