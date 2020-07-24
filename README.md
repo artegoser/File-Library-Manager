@@ -1,4 +1,5 @@
 # Large-File-Library
+![LFL](https://raw.githubusercontent.com/artegoser/Large-File-Library/master/imgs/LFL.png "LFL")
 ![GitHub](https://img.shields.io/github/license/artegoser/Large-File-Library)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/artegoser/Large-File-Library)
 ![GitHub watchers](https://img.shields.io/github/watchers/artegoser/Large-File-Library)
