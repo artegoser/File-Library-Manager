@@ -4,7 +4,7 @@ The compiled version is in the dist folder. Move the LFL.exe file from the dist 
 
 ## 2.1 Adding to path LFL.exe
 
-[Installing](https://github.com/artegoser/Large-File-Library/wiki/installation "installation guide")
+[Installation guide](https://github.com/artegoser/Large-File-Library/wiki/installation "installation guide")
 
 ## 2.2 add_to_path.bat (not_recommended)
 
