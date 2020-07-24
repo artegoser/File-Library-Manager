@@ -5,5 +5,5 @@
 
 > * db cat filetitle - прочитывание файла без скачивания в глобальной библиотеке
 > * ldb localdb.LFL cat filetitle - прочитывание файла без скачивания в локальной библиотеке
-* ldb firstlocaldb.LFL combine secondlocaldb.LFL - обьединение библиотек
+* ldb firstlocaldb.LFL combine secondlocaldb.LFL ***to finishlocaldb.LFL(optional)*** - обьединение библиотек, если не укзать 
 
