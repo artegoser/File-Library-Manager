@@ -32,8 +32,10 @@ def hidedownload(url, name, savedir=""):
          for data in r.iter_content(block_size):
           f.write(data)
 
-
-
+def cat(url):
+    cat = requests.get(url, stream=True)
+    textcat = cat.text
+    print(textcat)
 
 databasedownload =    {
       "update": {"name": "database.LFL",
@@ -41,11 +43,10 @@ databasedownload =    {
     }
 
 
-
 cd = os.getcwd()
 
 #версия программы
-version = "0.2"
+version = "0.0.3"
 
 
 s = "None"
@@ -70,23 +71,29 @@ try:
 except: 
     pass
 
-
+#quick commands ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 if s in ["install"]:
-    print("I update the LFL database")
-    hidedownload(url=databasedownload["update"]["url"], name=databasedownload["update"]["name"])
-
-    with open("database.LFL", "r", encoding = "utf-8") as data:
-        database = json.load(data)
-    os.remove("database.LFL")
-   
-    print("The database has been updated.")
-    #s2=#filename
     try:
-        print("\nDownloading: "+ s2)
-        download(url=database[s2]["url"], name=database[s2]["name"])
-        print("File saved in "+cd+"\\"+database[s2]["name"]+"\n")
+        print("I update the LFL database")
+        hidedownload(url=databasedownload["update"]["url"], name=databasedownload["update"]["name"])
+
+        with open("database.LFL", "r", encoding = "utf-8") as data:
+            database = json.load(data)
+        os.remove("database.LFL")
+   
+        print("The database has been updated.")
+        try:
+
+            print("\nDownloading: "+ s2)
+            download(url=database[s2]["url"], name=database[s2]["name"])
+            print("File saved in "+cd+"\\"+database[s2]["name"]+"\n")
+
+        except:
+            print("There is no such File in the LFL.\n")
     except:
-        print("There is no such File in the LFL.\n")
+        print("The troubles with LFL global database\n")
+    #s2=#filename
+   
 
 elif s in["version"]:
     print("Version of Large File Library - "+ version+"\n")
@@ -94,29 +101,39 @@ elif s in["version"]:
 #DB working with globallibrary   -------------------------------------------------------------------------------------------------------------------------------------------------------
 elif s in["db"]:   #Семейство db
 
+    try:
+        print("\nI update the LFL database")
+        hidedownload(url=databasedownload["update"]["url"], name=databasedownload["update"]["name"])
 
-    print("\nI update the LFL database")
-    hidedownload(url=databasedownload["update"]["url"], name=databasedownload["update"]["name"])
-
-    with open("database.LFL", "r", encoding = "utf-8") as data:
-        database = json.load(data)
-    os.remove("database.LFL")
+        with open("database.LFL", "r", encoding = "utf-8") as data:
+            database = json.load(data)
+        os.remove("database.LFL")
    
-    print("The database has been updated.\n")
+        print("The database has been updated.\n")
+    except:
+        print("The troubles with LFL global database\n")
 
 
     if s2 in["list"]:
-        
-        for title in database.keys():
-            print("\nTitle: "+title)
-            print("URL: "+database[title]["url"])
-            print("Name: "+database[title]["name"]+"\n")
+
+            for title in database.keys():
+                print("\nTitle: "+title)
+                print("URL: "+database[title]["url"])
+                print("Name: "+database[title]["name"]+"\n")
 
     elif s2 in["info"]: #s3 имя файла
+        try:
+            print("\nTitle: "+s3)
+            print("URL: "+database[s3]["url"])
+            print("Name: "+database[s3]["name"]+"\n")
+        except:
+            print("There is no such File in the LFL.\n")
 
-        print("\nTitle: "+s3)
-        print("URL: "+database[s3]["url"])
-        print("Name: "+database[s3]["name"]+"\n")
+    elif s2 in["cat"]:
+        try:
+            cat(database[s3]["url"])
+        except:
+            print("There is no such File in the LFL.\n")
 
     else:
         print("There is no such command.")
@@ -135,16 +152,22 @@ elif s in["ldb"]: #семейство ldb
                 print("Name: "+localdb[title]["name"]+"\n")
 
         except:
-            print("The "+s2+" library file does not exist or it cannot be read")
+            print("The "+s2+" library does not exist or it cannot be read\n")
 
 
     elif s3 in["info"]: #s4 имя файла
-        with open(s2, "r", encoding = "utf-8") as data:
-            localdb = json.load(data)
-        print("\nTitle: "+s4)
-        print("URL: "+localdb[s4]["url"])
-        print("Name: "+localdb[s4]["name"]+"\n")
+        try:
+            with open(s2, "r", encoding = "utf-8") as data:
+                localdb = json.load(data)
+            try:
+                print("\nTitle: "+s4)
+                print("URL: "+localdb[s4]["url"])
+                print("Name: "+localdb[s4]["name"]+"\n")
+            except:
+                print("There is no such File in the localdb")
 
+        except:
+            print("The "+s2+" library does not exist or it cannot be read\n")
 
     elif s3 in["install"]:
         #s4 имя файла
@@ -159,7 +182,7 @@ elif s in["ldb"]: #семейство ldb
             except:
                 print("There is no such File in the "+s2+" library.\n")
         except:
-            print("The "+s2+" library file does not exist or it cannot be read")
+            print("The "+s2+" library does not exist or it cannot be read")
    
         
     elif s3 in["dbinstall"]: #скачивание всей локальной библиотеки
@@ -177,7 +200,7 @@ elif s in["ldb"]: #семейство ldb
                   print("\nUnreadable file (wrong url or wrong syntax)")
                   print("Skipping...\n")
         except:
-            print("The "+s2+" library file does not exist or it cannot be read")
+            print("The "+s2+" library does not exist or it cannot be read")
 
     elif s3 in["create"]:#Создание локальной библиотеки
         with open(s2, "w") as data:
@@ -205,7 +228,17 @@ elif s in["ldb"]: #семейство ldb
                 json.dump(localdb, data)
             print("Block added to library")
         except:
-            print("The "+s2+" library file does not exist or it cannot be read")
+            print("The "+s2+" library does not exist or it cannot be read")
+    elif s3 in["cat"]:
+        try:
+            with open(s2, "r", encoding = "utf-8") as data:
+                        localdb = json.load(data)
+            try:
+                cat(localdb[s4]["url"])
+            except:
+                print("There is no such File in the LFL.\n")
+        except:
+            print("The "+s2+" library does not exist or it cannot be read")
 
     else:
         print("There is no such command.")
