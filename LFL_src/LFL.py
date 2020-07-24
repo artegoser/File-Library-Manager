@@ -46,8 +46,8 @@ databasedownload =    {
 cd = os.getcwd()
 
 #версия программы
-version = "0.0.3"
-
+version = "0.0.4"
+error = 0
 
 s = "None"
 s2 = "None"
@@ -164,12 +164,13 @@ elif s in["ldb"]: #семейство ldb
                 print("URL: "+localdb[s4]["url"])
                 print("Name: "+localdb[s4]["name"]+"\n")
             except:
-                print("There is no such File in the localdb")
+                print("There is no such File in the localdb\n")
 
         except:
             print("The "+s2+" library does not exist or it cannot be read\n")
 
     elif s3 in["install"]:
+        print("")
         #s4 имя файла
         try:
             with open(s2, "r", encoding = "utf-8") as data:
@@ -186,6 +187,7 @@ elif s in["ldb"]: #семейство ldb
    
         
     elif s3 in["dbinstall"]: #скачивание всей локальной библиотеки
+        print("")
         try:
             with open(s2, "r", encoding = "utf-8") as data:
                     localdb = json.load(data)
@@ -201,13 +203,16 @@ elif s in["ldb"]: #семейство ldb
                   print("Skipping...\n")
         except:
             print("The "+s2+" library does not exist or it cannot be read")
+        print("")
 
     elif s3 in["create"]:#Создание локальной библиотеки
+        print("")
         with open(s2, "w") as data:
-            json.dump({}, data,)
+            json.dump({}, data)
         print("Localdb "+s2+" was created")
+        print("")
     elif s3 in["add"]: #Добавление елементов в локальную библиотеку
-
+        print("")
         title = s4
         name = s5
         url = s6
@@ -229,7 +234,54 @@ elif s in["ldb"]: #семейство ldb
             print("Block added to library")
         except:
             print("The "+s2+" library does not exist or it cannot be read")
+        print("")
+    elif s3 in["merge", "combine"]: #s2 первая библиотека #s4 вторая библиотека #s6 финальная библиотека
+        print("")
+        try:
+            with open(s2, "r") as data:
+                   first = json.load(data)
+            print(s2+" local library was read")
+        except:
+            print("The "+s2+" library does not exist or it cannot be read")
+            error = 1
+
+        try:
+            with open(s4, "r") as data:
+                   second  = json.load(data)
+            print(s4+" local library was read")
+        except:
+            print("The "+s4+" library does not exist or it cannot be read")
+            error = 1
+
+        if error == 0:
+            if s5 in["to"]:
+
+                with open(s6, "w") as data:
+                    json.dump({}, data)
+
+                with open(s6, "r") as data:
+                   final  = json.load(data)
+
+                final.update(first)
+                final.update(second)
+
+                with open(s6, "w") as data:
+                    json.dump(final, data)
+                print("Libraries "+s2+" and "+s4+" successfully merged to "+s6)
+
+            else:
+
+                first.update(second)
+                with open(s2, "w") as data:
+                    json.dump(first, data)
+                print("Libraries "+s2+" and "+s4+" successfully merged to "+s2)
+        else:
+            error = 0
+            print("Can't merge libraries")
+        print("")
+
     elif s3 in["cat"]:
+        print("")
         try:
             with open(s2, "r", encoding = "utf-8") as data:
                         localdb = json.load(data)
@@ -239,6 +291,7 @@ elif s in["ldb"]: #семейство ldb
                 print("There is no such File in the LFL.\n")
         except:
             print("The "+s2+" library does not exist or it cannot be read")
+        print("")
 
     else:
         print("There is no such command.")
