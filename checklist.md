@@ -14,6 +14,7 @@
 * ?ldb localdbname.LFL create package packagename - нужно ли? создает пакет внутри локальной библиотеки|**creates a package inside a local library**
 * ?ldb localdbname.LFL addto package packagename filetitle fileurl filename - нужно ли? добавить в пакет в локальной библиотеке файл|**add file to package in local library**
 
-### Bug fixes! 
+### Code fixes! 
 
 * Exception handlers
+* Optimizing
