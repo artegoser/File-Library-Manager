@@ -46,7 +46,7 @@ databasedownload =    {
 cd = os.getcwd()
 
 #версия программы
-version = "0.0.4"
+version = "0.0.5"
 error = 0
 
 s = "None"
@@ -74,7 +74,7 @@ except:
 print("")
 
 #quick commands ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-if s in ["install"]:
+if s in ["install"]: #установка файла из глобальной библиотеки
     try:
         print("I update the LFL database")
         hidedownload(url=databasedownload["update"]["url"], name=databasedownload["update"]["name"])
@@ -97,13 +97,13 @@ if s in ["install"]:
     #s2=#filename
    
 
-elif s in["version"]:
+elif s in["version"]: #Узнать версию программы
     print("Version of Large File Library - "+ version+"\n")
 
 #DB working with globallibrary   -------------------------------------------------------------------------------------------------------------------------------------------------------
 elif s in["db"]:   #Семейство db
 
-    try:
+    try: #Обновление глобальной библиотеки
         print("I update the LFL database")
         hidedownload(url=databasedownload["update"]["url"], name=databasedownload["update"]["name"])
 
@@ -116,14 +116,14 @@ elif s in["db"]:   #Семейство db
         print("The troubles with LFL global database")
 
 
-    if s2 in["list"]:
+    if s2 in["list"]: #Все названия ссылки и имена в глобальной библиотеке
 
             for title in database.keys():
                 print("\nTitle: "+title)
                 print("URL: "+database[title]["url"])
                 print("Name: "+database[title]["name"]+"\n")
 
-    elif s2 in["info"]: #s3 имя файла
+    elif s2 in["info"]: #узнать ссылку и имя файла в глобальной библиотеке #s3 имя файла
         try:
             print("Title: "+s3)
             print("URL: "+database[s3]["url"])
@@ -131,7 +131,7 @@ elif s in["db"]:   #Семейство db
         except:
             print("There is no such File in the LFL.")
 
-    elif s2 in["cat"]:
+    elif s2 in["cat"]: #прочитать файл без скачивания в глобальной библиотеке
         try:
             cat(database[s3]["url"])
         except:
@@ -143,7 +143,7 @@ elif s in["db"]:   #Семейство db
 #LDB working with locallibraries ------------------------------------------------------------------------------------------------------------------------------------------------
 elif s in["ldb"]: #семейство ldb
             #s2 название локальной базы данных
-    if s3 in["list"]:
+    if s3 in["list"]: #Все названия ссылки и имена в локальной библиотеке
         try:
             with open(s2, "r", encoding = "utf-8") as data:
                 localdb = json.load(data)
@@ -157,7 +157,7 @@ elif s in["ldb"]: #семейство ldb
             print("The "+s2+" library does not exist or it cannot be read\n")
 
 
-    elif s3 in["info"]: #s4 имя файла
+    elif s3 in["info"]: #узнать ссылку и имя файла в локальной библиотеке #s4 имя файла
         try:
             with open(s2, "r", encoding = "utf-8") as data:
                 localdb = json.load(data)
@@ -172,7 +172,7 @@ elif s in["ldb"]: #семейство ldb
         except:
             print("The "+s2+" library does not exist or it cannot be read")
 
-    elif s3 in["install"]:
+    elif s3 in["install"]: #скачивание файла из локальной библиотеке
         #s4 имя файла
         try:
             with open(s2, "r", encoding = "utf-8") as data:
@@ -228,7 +228,7 @@ elif s in["ldb"]: #семейство ldb
             with open(s2, "r") as data:
                 localdb = json.load(data)
 
-            #localdb[title] = 
+
             localdb.update(new_block)
             with open(s2, "w") as data:
                 json.dump(localdb, data)
@@ -236,7 +236,7 @@ elif s in["ldb"]: #семейство ldb
         except:
             print("The "+s2+" library does not exist or it cannot be read")
 
-    elif s3 in["merge", "combine"]: #s2 первая библиотека #s4 вторая библиотека #s6 финальная библиотека
+    elif s3 in["merge", "combine"]: #соединение локальных библиотек   #s2 первая библиотека #s4 вторая библиотека #s6 финальная библиотека
 
         try:
             with open(s2, "r") as data:
@@ -281,7 +281,7 @@ elif s in["ldb"]: #семейство ldb
             print("Can't merge libraries")
 
 
-    elif s3 in["cat"]:
+    elif s3 in["cat"]: #прочитать файл без скачивания в локальной библиотеке
 
         try:
             with open(s2, "r", encoding = "utf-8") as data:
@@ -289,7 +289,7 @@ elif s in["ldb"]: #семейство ldb
             try:
                 cat(localdb[s4]["url"])
             except:
-                print("There is no such File in the LFL.\n")
+                print("There is no such File in the LFL.")
         except:
             print("The "+s2+" library does not exist or it cannot be read")
 
