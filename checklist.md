@@ -17,5 +17,5 @@
 ### Code fixes! 
 
 * Exception handlers
-* Optimizing
+> * Optimizing
 * More comments !!!
