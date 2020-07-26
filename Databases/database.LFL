@@ -1,14 +1,22 @@
 {
-    "update": {
-        "name": "database.LFL",
-        "url": "https://raw.githubusercontent.com/artegoser/Large-File-Library/master/Databases/database.LFL"
-    },
-    "genernationen": {
-        "name": "GenerNationEN.py",
-        "url": "https://raw.githubusercontent.com/artegoser/GenerNation/master/GenerNation/GenerNationEN.py"
-    },
-    "genernationru": {
-        "name": "GenerNationRU.py",
-        "url": "https://raw.githubusercontent.com/artegoser/GenerNation/master/GenerNation/GenerNationRU.py"
-    }
+  "update": {
+    "name": "database.LFL",
+    "url": "https://raw.githubusercontent.com/artegoser/Large-File-Library/master/Databases/database.LFL"
+  },
+  "genernationen": {
+    "name": "GenerNationEN.py",
+    "url": "https://raw.githubusercontent.com/artegoser/GenerNation/master/GenerNation/GenerNationEN.py"
+  },
+  "genernationru": {
+    "name": "GenerNationRU.py",
+    "url": "https://raw.githubusercontent.com/artegoser/GenerNation/master/GenerNation/GenerNationRU.py"
+  },
+  "tardis0.5": {
+    "name": "tardis0.5.zip",
+    "url": "https://github.com/artegoser/artegoserprojects/blob/master/tardis0.5.zip"
+  },
+  "rusconstitution": {
+    "name": "rusconstitution.docx",
+    "url": "https://ipfs.io/ipfs/QmS6md3dWe2FYrxPHxWy5FuA4hNrwaM5zYMbsjnM3VB7tx"
+  }
 }
