@@ -45,9 +45,8 @@ databasedownload =    {
 
 cd = os.getcwd()
 
-#версия программы
-version = "0.0.5"
-error = 0
+version = "0.0.5" #programm version
+error = 0 #check errors
 
 s = "None"
 s2 = "None"
