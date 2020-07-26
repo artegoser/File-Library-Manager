@@ -16,7 +16,7 @@
 
 #### ldb
 * ldb localdbname.LFL package install packagename - локальная библиотека сама может служить пакетом файлов|**installs a package of files from the local library (library within a library)**
-* ldb localdbname.LFL create package packagename - создает пакет внутри локальной библиотеки|**creates a package inside a local library**
+* ldb localdbname.LFL add package packagename - добавляет пакет внутри локальной библиотеки|**adds a package inside a local library**
 * ldb localdbname.LFL addto package packagename filetitle fileurl filename - добавить в пакет в локальной библиотеке файл|**add file to package in local library**
 
 ### Code fixes! 
