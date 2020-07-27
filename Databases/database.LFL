@@ -1,7 +1,6 @@
 {
     "packages": {
         "LFL": {
-            "packagetype":"paper",
             "LFLportable": {
                 "name": "database.LFL",
                 "url": "https://raw.githubusercontent.com/artegoser/Large-File-Library/master/Databases/database.LFL"
