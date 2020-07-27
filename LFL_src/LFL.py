@@ -111,6 +111,7 @@ elif s in["package", "packages"]:
    
     print("The database has been updated.")
     packages = database["packages"]
+    print("")
 
   except:
       print("The troubles with LFL global database")
@@ -128,12 +129,11 @@ elif s in["package", "packages"]:
                 print("Skipping...\n")
         print("Package download completed")
 
-
-            
-
-
     elif s2 in["list"]:
-        d=0
+        print("All packages ----------------------------------------------------------------------\n")
+        for title in packages.keys():
+            print("    Package name: "+ title+"\n")
+        print("-----------------------------------------------------------------------------------")
   else:
     print("I cannot execute the command")
 
