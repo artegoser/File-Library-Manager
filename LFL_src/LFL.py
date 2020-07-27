@@ -100,7 +100,7 @@ elif s in["version"]: #Узнать версию программы
     print("Version of Large File Library - "+ version+"\n")
 
 
-elif s in["package", "packages"]:
+elif s in["package", "packages"]: #работа с пакетами------------------------------------------------------------------------------------------------------------------------
   try:
     print("I update the LFL database")
     hidedownload(url=databasedownload["update"]["url"], name=databasedownload["update"]["name"])
@@ -116,6 +116,11 @@ elif s in["package", "packages"]:
   except:
       print("The troubles with LFL global database")
       error = 1
+  try:
+      check = packages[s2]
+  except:
+      error = 1
+      print("Package does not exist")
   
   if error == 0:
     if s3 in["install"]:
@@ -128,6 +133,17 @@ elif s in["package", "packages"]:
                 print("\nUnreadable file (wrong url or wrong syntax)")
                 print("Skipping...\n")
         print("Package download completed")
+    elif s3 in["list"]:
+        print("All files in "+ s2 +" package----------------------------------------------------------\n")
+        for title in packages[s2].keys():
+              try:
+                print("\n    Title: "+title)
+                print("    URL: "+packages[s2][title]["url"])
+                print("    Name: "+packages[s2][title]["name"]+"\n")
+              except:
+                print("\nUnreadable file (wrong url or wrong syntax)")
+                print("Skipping...\n")
+        print("-----------------------------------------------------------------------------------")
 
     elif s2 in["list"]:
         print("All packages ----------------------------------------------------------------------\n")
