@@ -99,6 +99,44 @@ if s in ["install"]: #установка файла из глобальной б
 elif s in["version"]: #Узнать версию программы
     print("Version of Large File Library - "+ version+"\n")
 
+
+elif s in["package", "packages"]:
+  try:
+    print("I update the LFL database")
+    hidedownload(url=databasedownload["update"]["url"], name=databasedownload["update"]["name"])
+
+    with open("database.LFL", "r", encoding = "utf-8") as data:
+        database = json.load(data)
+    os.remove("database.LFL")
+   
+    print("The database has been updated.")
+    packages = database["packages"]
+
+  except:
+      print("The troubles with LFL global database")
+      error = 1
+  
+  if error == 0:
+    if s3 in["install"]:
+        print("\nDownloading: "+ s2)
+        for title in packages[s2].keys():
+              try:
+                 print("\nDownloading: "+ packages[s2][title]["name"])
+                 download(url=packages[s2][title]["url"], name=packages[s2][title]["name"], savedir=s2+"/")    
+              except:
+                print("\nUnreadable file (wrong url or wrong syntax)")
+                print("Skipping...\n")
+        print("Package download completed")
+
+
+            
+
+
+    elif s2 in["list"]:
+        d=0
+  else:
+    print("I cannot execute the command")
+
 #DB working with globallibrary   -------------------------------------------------------------------------------------------------------------------------------------------------------
 elif s in["db"]:   #Семейство db
 
@@ -118,9 +156,13 @@ elif s in["db"]:   #Семейство db
     if s2 in["list"]: #Все названия ссылки и имена в глобальной библиотеке
 
             for title in database.keys():
+              try:
                 print("\nTitle: "+title)
                 print("URL: "+database[title]["url"])
                 print("Name: "+database[title]["name"]+"\n")
+              except:
+                  print("\nUnreadable file (wrong url or wrong syntax)")
+                  print("Skipping...\n")
 
     elif s2 in["info"]: #узнать ссылку и имя файла в глобальной библиотеке #s3 имя файла
         try:
@@ -148,9 +190,13 @@ elif s in["ldb"]: #семейство ldb
                 localdb = json.load(data)
             print("localdb "+s2+" was read")
             for title in localdb.keys():
+              try:
                 print("\nTitle: "+title)
                 print("URL: "+localdb[title]["url"])
                 print("Name: "+localdb[title]["name"]+"\n")
+              except:
+                  print("\nUnreadable file (wrong url or wrong syntax)")
+                  print("Skipping...\n")
 
         except:
             print("The "+s2+" library does not exist or it cannot be read\n")
