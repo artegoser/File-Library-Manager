@@ -1,5 +1,6 @@
 {
     "packages": {
+        "packagetype": "paper"
         "LFL": {
             "LFLportable": {
                 "name": "database.LFL",
