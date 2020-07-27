@@ -5,7 +5,7 @@
 
 #### package
 
-* package packagename install - устанавливает пакет файлов из глобальной библиотеки(библиотека внутри библиотеки)|**installs a package of files from the global library (library within a library)**
+> * package packagename install - устанавливает пакет файлов из глобальной библиотеки(библиотека внутри библиотеки)|**installs a package of files from the global library (library within a library)**
 * packages list - считывает имена всех пакетов из глобальной библиотеки|**reads the names of all packages from the global library**
 * package packagename list - считывает все наименования, ссылки и имена файлов в пакете|**reads all titles, urls and filenames in a package**
 * package packagename file filename install - устанавливает файл из пакета|**installs a file from a package**
