@@ -1,6 +1,6 @@
 # Команды которые нужно сделать
 
-## LFL 0.0.5 version - big package update
+## FLIM 0.0.5 version - big package update
 ### NEW commands
 
 #### package
