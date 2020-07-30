@@ -31,7 +31,7 @@ FLIM библиотеки удобны тем
 всего одной командой.
 
 ## Installation
-[Installation guide](https://github.com/artegoser/Large-File-Library/wiki/installation "installation guide") 
+[Installation guide](https://github.com/artegoser/File-Library-Manager/wiki/docs-installation "installation guide") 
 
 ## Commands for the latest version FLIM (0.0.4)
 	FLIM - Must be added to each FLIM command  (is not a separate command for FLIM) 
