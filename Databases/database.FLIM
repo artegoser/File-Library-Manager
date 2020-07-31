@@ -1,23 +1,23 @@
 {
     "packages": {
-        "LFL": {
+        "FLIM": {
             "LFLportable": {
-                "name": "database.LFL",
-                "url": "https://raw.githubusercontent.com/artegoser/Large-File-Library/master/Databases/database.LFL"
+                "name": "LFL_portable.exe",
+                "url": "https://github.com/artegoser/File-Library-Manager/releases/download/1.0.0-LFL_portable/LFL_portable.exe"
             },
-            "LFL0.0.4": {
-                "name": "GenerNationEN.py",
-                "url": "https://raw.githubusercontent.com/artegoser/GenerNation/master/GenerNation/GenerNationEN.py"
+            "FLIM0.0.4": {
+                "name": "FLIM004.exe",
+                "url": "https://github.com/artegoser/File-Library-Manager/releases/download/0.0.4/FLIM.exe"
             },
-            "LFL0.0.3": {
-                "name": "GenerNationRU.py",
-                "url": "https://raw.githubusercontent.com/artegoser/GenerNation/master/GenerNation/GenerNationRU.py"
+            "FLIM0.0.3": {
+                "name": "FLIM003.exe",
+                "url": "https://github.com/artegoser/File-Library-Manager/releases/download/0.0.3/FLIM.exe"
             }
         }
     },
     "update": {
         "name": "database.FLIM",
-        "url": "https://raw.githubusercontent.com/artegoser/Large-File-Library/master/Databases/database.LFL"
+        "url": "https://raw.githubusercontent.com/artegoser/Large-File-Library/master/Databases/database.FLIM"
     },
     "genernationen": {
         "name": "GenerNationEN.py",
