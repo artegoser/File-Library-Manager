@@ -38,7 +38,7 @@ def cat(url):
     print(textcat)
 
 databasedownload =    {
-      "update": {"name": "database.LFL",
+      "update": {"name": "database.FLIM",
 			     "url": "https://raw.githubusercontent.com/artegoser/Large-File-Library/master/Databases/database.LFL"}
     }
 
@@ -75,12 +75,12 @@ print("")
 #quick commands ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 if s in ["install"]: #установка файла из глобальной библиотеки
     try:
-        print("I update the LFL database")
+        print("I update the FLIM database")
         hidedownload(url=databasedownload["update"]["url"], name=databasedownload["update"]["name"])
 
-        with open("database.LFL", "r", encoding = "utf-8") as data:
+        with open("database.FLIM", "r", encoding = "utf-8") as data:
             database = json.load(data)
-        os.remove("database.LFL")
+        os.remove("database.FLIM")
    
         print("The database has been updated.")
         try:
@@ -90,9 +90,9 @@ if s in ["install"]: #установка файла из глобальной б
             print("File saved in "+cd+"\\"+database[s2]["name"])
 
         except:
-            print("There is no such File in the LFL.")
+            print("There is no such File in the FLIM.")
     except:
-        print("The troubles with LFL global database")
+        print("The troubles with FLIM global database")
     #s2=#filename
    
 
@@ -102,19 +102,19 @@ elif s in["version"]: #Узнать версию программы
 
 elif s in["package", "packages"]: #работа с пакетами------------------------------------------------------------------------------------------------------------------------
   try:
-    print("I update the LFL database")
+    print("I update the FLIM database")
     hidedownload(url=databasedownload["update"]["url"], name=databasedownload["update"]["name"])
 
-    with open("database.LFL", "r", encoding = "utf-8") as data:
+    with open("database.FLIM", "r", encoding = "utf-8") as data:
         database = json.load(data)
-    os.remove("database.LFL")
+    os.remove("database.FLIM")
    
     print("The database has been updated.")
     packages = database["packages"]
     print("")
 
   except:
-      print("The troubles with LFL global database")
+      print("The troubles with FLIM global database")
       error = 1
   try:
       check = packages[s2]
@@ -157,16 +157,16 @@ elif s in["package", "packages"]: #работа с пакетами-------------
 elif s in["db"]:   #Семейство db
 
     try: #Обновление глобальной библиотеки
-        print("I update the LFL database")
+        print("I update the FLIM database")
         hidedownload(url=databasedownload["update"]["url"], name=databasedownload["update"]["name"])
 
-        with open("database.LFL", "r", encoding = "utf-8") as data:
+        with open("database.FLIM", "r", encoding = "utf-8") as data:
             database = json.load(data)
-        os.remove("database.LFL")
+        os.remove("database.FLIM")
    
         print("The database has been updated.")
     except:
-        print("The troubles with LFL global database")
+        print("The troubles with FLIM global database")
 
 
     if s2 in["list"]: #Все названия ссылки и имена в глобальной библиотеке
@@ -186,13 +186,13 @@ elif s in["db"]:   #Семейство db
             print("URL: "+database[s3]["url"])
             print("Name: "+database[s3]["name"])
         except:
-            print("There is no such File in the LFL.")
+            print("There is no such File in the FLIM.")
 
     elif s2 in["cat"]: #прочитать файл без скачивания в глобальной библиотеке
         try:
             cat(database[s3]["url"])
         except:
-            print("There is no such File in the LFL.")
+            print("There is no such File in the FLIM.")
 
     else:
         print("There is no such command.")
@@ -350,7 +350,7 @@ elif s in["ldb"]: #семейство ldb
             try:
                 cat(localdb[s4]["url"])
             except:
-                print("There is no such File in the LFL.")
+                print("There is no such File in the FLIM.")
         except:
             print("The "+s2+" library does not exist or it cannot be read")
 

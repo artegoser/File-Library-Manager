@@ -1,8 +1,8 @@
 ## 1. Before starting the compiler, install the libraries from requirements.txt. Python version 3.6
 
-The compiled version is in the dist folder. Move the LFL.exe file from the dist folder here
+The compiled version is in the dist folder. Move the FLIM.exe file from the dist folder here
 
-## 2.1 Adding to PATH LFL.exe
+## 2.1 Adding to PATH FLIM.exe
 
 [Installation guide](https://github.com/artegoser/Large-File-Library/wiki/installation "installation guide")
 
@@ -13,7 +13,7 @@ The compiled version is in the dist folder. Move the LFL.exe file from the dist 
 	to back up your PATH before making any changes.
 
 
-***LFL is not responsible for your actions***  
+***FLIM is not responsible for your actions***  
 
 
-**(not recommended)If you want to automatically add LFL to the system PATH variable, run add_to_path.bat as administrator, the variable is set only to the current user**
+**(not recommended)If you want to automatically add FLIM to the system PATH variable, run add_to_path.bat as administrator, the variable is set only to the current user**
