@@ -16,7 +16,7 @@
         }
     },
     "update": {
-        "name": "database.LFL",
+        "name": "database.FLIM",
         "url": "https://raw.githubusercontent.com/artegoser/Large-File-Library/master/Databases/database.LFL"
     },
     "genernationen": {
