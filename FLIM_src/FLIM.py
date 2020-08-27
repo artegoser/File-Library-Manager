@@ -39,7 +39,7 @@ def cat(url):
 
 databasedownload =    {
       "update": {"name": "database.FLIM",
-			     "url": "https://raw.githubusercontent.com/artegoser/Large-File-Library/master/Databases/database.LFL"}
+			     "url": "https://raw.githubusercontent.com/artegoser/Large-File-Library/master/Databases/database.FLIM"}
     }
 
 
@@ -48,10 +48,10 @@ cd = os.getcwd()
 version = "0.0.5" #programm version
 error = 0 #check errors
 
-s = "None"
-s2 = "None"
-s3 = "None"
-s4 = "None"
+s = "db"
+s2 = "https://raw.githubusercontent.com/artegoser/File-Library-Manager/master/Databases/database.FLIM"
+s3 = "install"
+s4 = "tardis0.5"
 s5 = "None"
 s6 = "None"
 s7 = "None"
@@ -97,7 +97,7 @@ if s in ["install"]: #установка файла из глобальной б
    
 
 elif s in["version"]: #Узнать версию программы
-    print("Version of Large File Library - "+ version+"\n")
+    print("Version of File Library Manager - "+ version+"\n")
 
 
 elif s in["package", "packages"]: #работа с пакетами------------------------------------------------------------------------------------------------------------------------
@@ -156,17 +156,18 @@ elif s in["package", "packages"]: #работа с пакетами-------------
 #DB working with globallibrary   -------------------------------------------------------------------------------------------------------------------------------------------------------
 elif s in["db"]:   #Семейство db
 
-    try: #Обновление глобальной библиотеки
-        print("I update the FLIM database")
-        hidedownload(url=databasedownload["update"]["url"], name=databasedownload["update"]["name"])
+    if s3 != "install":
+        try: #Обновление глобальной библиотеки
+            print("I update the FLIM database")
+            hidedownload(url=databasedownload["update"]["url"], name=databasedownload["update"]["name"])
 
-        with open("database.FLIM", "r", encoding = "utf-8") as data:
-            database = json.load(data)
-        os.remove("database.FLIM")
+            with open("database.FLIM", "r", encoding = "utf-8") as data:
+                database = json.load(data)
+            os.remove("database.FLIM")
    
-        print("The database has been updated.")
-    except:
-        print("The troubles with FLIM global database")
+            print("The database has been updated.")
+        except:
+            print("The troubles with FLIM global database")
 
 
     if s2 in["list"]: #Все названия ссылки и имена в глобальной библиотеке
@@ -193,6 +194,29 @@ elif s in["db"]:   #Семейство db
             cat(database[s3]["url"])
         except:
             print("There is no such File in the FLIM.")
+
+    elif s3 in["install"]:
+         try: #Обновление глобальной библиотеки
+            print("I update the FLIM global database")
+            hidedownload(url=s2, name=databasedownload["update"]["name"])
+
+            with open("database.FLIM", "r", encoding = "utf-8") as data:
+                database = json.load(data)
+            os.remove("database.FLIM")
+   
+            print("The global database has been downloaded.")
+
+            try:
+
+                print("\nDownloading: "+ s4)
+                download(url=database[s4]["url"], name=database[s4]["name"])
+                print("File saved in "+cd+"\\"+database[s4]["name"])
+
+            except:
+                print("There is no such File in the FLIM global database.")
+
+         except:
+            print("The troubles with FLIM global database")
 
     else:
         print("There is no such command.")
