@@ -1,29 +1,39 @@
-## LFL 0.0.1
+## FLIM 0.0.1
 ### Commands Added
-1. LFL install
-2. LFL version
+1. FLIM install
+2. FLIM version
 
-## LFL 0.0.2
+## FLIM 0.0.2
 ### Commands Added
-1. LFL db list
-2. LFL localdb localdbname.LFL create
-3. LFL localdb localdbname.LFL add
-4. LFL localdb localdbname.LFL install
-5. LFL localdb localdbname.LFL dbinstall
-6. LFL localdb localdbname.LFL list
+1. FLIM db list
+2. FLIM localdb localdbname.FLIM create
+3. FLIM localdb localdbname.FLIM add
+4. FLIM localdb localdbname.FLIM install
+5. FLIM localdb localdbname.FLIM dbinstall
+6. FLIM localdb localdbname.FLIM list
 
-## LFL 0.0.3
+## FLIM 0.0.3
 ### Commands Added
-1. ldb localdbname.LFL info 
+1. ldb localdbname.FLIM info 
 2. db info
 
-## LFL 0.0.4
+## FLIM 0.0.4
 ### Commands Added
   
 1. db cat
-2. ldb localdb.LFL cat
-3. ldb firstlocaldb.LFL merge(***or combine***) secondlocaldb.LFL ***to finishlocaldb.LFL(optional)***
+2. ldb localdb.FLIM cat
+3. ldb firstlocaldb.FLIM merge(***or combine***) secondlocaldb.FLIM ***to finishlocaldb.FLIM(optional)***
 
 ### Bug fixes! 
 
 1. Exception handlers
+
+## FLIM 0.0.5
+
+### Commands Added
+
+1. package packagename install
+2. package(s) list
+3. package packagename list
+4. db globaldburl install filetitle
+5. db globaldburl to ldbname.FLIM
