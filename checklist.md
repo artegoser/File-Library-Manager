@@ -11,7 +11,7 @@
 
 #### db
 
-* db globaldburl install filename - устанавливает из глобальной(не главной) библиотеки файл|**installs a file from the global (not main) library**
+* db globaldburl install filetitle - устанавливает из глобальной(не главной) библиотеки файл|**installs a file from the global (not main) library**
 * db globaldburl to local - скачивает глобальную(не главную) библиотеку на локальный диск|**downloads the global (non-main) library to the local disk**
 
 #### ldb
