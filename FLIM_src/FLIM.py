@@ -48,10 +48,10 @@ cd = os.getcwd()
 version = "0.0.5" #programm version
 error = 0 #check errors
 
-s = "db"
-s2 = "https://raw.githubusercontent.com/artegoser/File-Library-Manager/master/Databases/database.FLIM"
-s3 = "install"
-s4 = "tardis0.5"
+s = "None"
+s2 = "None"
+s3 = "None"
+s4 = "None"
 s5 = "None"
 s6 = "None"
 s7 = "None"
@@ -156,7 +156,7 @@ elif s in["package", "packages"]: #работа с пакетами-------------
 #DB working with globallibrary   -------------------------------------------------------------------------------------------------------------------------------------------------------
 elif s in["db"]:   #Семейство db
 
-    if s3 != "install":
+    if s3 not in ["install", "to"]:
         try: #Обновление глобальной библиотеки
             print("I update the FLIM database")
             hidedownload(url=databasedownload["update"]["url"], name=databasedownload["update"]["name"])
@@ -218,8 +218,17 @@ elif s in["db"]:   #Семейство db
          except:
             print("The troubles with FLIM global database")
 
+    elif s3 in["to"]:
+      try:
+        download(url=s2, name=s4)
+        print("Global db has been downloaded")
+      except:
+          print("The troubles with FLIM global database")
+
     else:
         print("There is no such command.")
+
+    
 
 #LDB working with locallibraries ------------------------------------------------------------------------------------------------------------------------------------------------
 elif s in["ldb"]: #семейство ldb
