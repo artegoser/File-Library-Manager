@@ -1,6 +1,6 @@
 # Команды которые нужно сделать
 
-## FLIM 0.0.5 version - big package update
+## FLIM 0.0.5 version - package update
 ### NEW commands
 
 #### package
