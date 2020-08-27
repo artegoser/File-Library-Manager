@@ -11,8 +11,8 @@
 
 #### db
 
-* db globaldburl install filetitle - устанавливает из глобальной(не главной) библиотеки файл|**installs a file from the global (not main) library**
-* db globaldburl to ldbname.FLIM - скачивает глобальную(не главную) библиотеку на локальный диск|**downloads the global (non-main) library to the local disk**
+> * db globaldburl install filetitle - устанавливает из глобальной(не главной) библиотеки файл|**installs a file from the global (not main) library**
+> * db globaldburl to ldbname.FLIM - скачивает глобальную(не главную) библиотеку на локальный диск|**downloads the global (non-main) library to the local disk**
 
 #### ldb
 
@@ -29,6 +29,6 @@ cancelled
 
 ### Code fixes! 
 
-* Exception handlers
-* Optimizing
-* More comments !!!
+> * Exception handlers
+> * Optimizing
+> * More comments !!!
