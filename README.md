@@ -33,33 +33,40 @@ FLIM библиотеки удобны тем
 ## Installation
 [Installation guide](https://github.com/artegoser/File-Library-Manager/wiki/docs-installation "installation guide") 
 
-## Commands for the latest version FLIM (0.0.4)
+## Commands for the latest version FLIM (0.0.5)
 	FLIM - Must be added to each FLIM command  (is not a separate command for FLIM) 
 
 
 	FLIM version - Displays the version of the program  
-	FLIM install title-of-file - Installs a file from the global library  
+	FLIM install filetitle - Installs a file from the global library  
 	
 
 	FLIM db - Working with the global library (is not a separate command for FLIM) 
-	     + list - Gets file names, links to them and names from the global library  
-	     + info filetitle - Reads the title, name and link to a file in the global library
-	     + cat filetitle - reading a file without downloading in the global library
+	      + list - Gets file names, links to them and names from the global library  
+	      + info filetitle - Reads the title, name and link to a file in the global library
+	      + cat filetitle - reading a file without downloading in the global library
+	      + globaldburl install filetitle - installs a file from the global (not main) library
+	      + globaldburl to ldbname.FLIM - downloads the global (non-main) library to the local disk
 	
 
 	FLIM ldb localdbname.FLIM - Working with local libraries  (is not a separate command for FLIM) 
-	                      + create - Creates a local library  
-	                      + add title name url - Adds a block to the local library  
-	                      + install file-title-in-local-library - installs the desired file from the local library  
-	                      + dbinstall - downloads completely files from the local library  
-	                      + list - gets the filenames of the linked files and names from the local library
-			      + info filetitle - Reads the title, name and link to a file in the local library
-		              + cat filetitle - reading a file without downloading in the local library
-			      + merge(or combine) secondlocaldb.FLIM to finishlocaldb.FLIM(optional) - merging libraries, 
-												     if you don't write "to finish 		
-												     localdb.FLIM" the merged library 		
-												     will be written to firstlocaldb.FLIM
-
+	                        + create - Creates a local library  
+	                        + add title name url - Adds a block to the local library  
+	                        + install file-title-in-local-library - installs the desired file from the local library  
+	                        + dbinstall - downloads completely files from the local library  
+	                        + list - gets the filenames of the linked files and names from the local library
+			        + info filetitle - Reads the title, name and link to a file in the local library
+		                + cat filetitle - reading a file without downloading in the local library
+			        + merge(or combine) secondlocaldb.FLIM to finishlocaldb.FLIM(optional) - merging libraries, 
+												         if you don't write "to finish 		
+												         localdb.FLIM" the merged library 		
+												         will be written to firstlocaldb.FLIM
+												     
+												  
+	FLIM package - Working with packages  (is not a separate command for FLIM)
+		   + packagename install - installs a package of files from the global library (library within a library)
+		   + (s) list - reads the names of all packages from the global library
+		   + packagename list - reads all titles, urls and filenames in a package
 
 ### Help wanted! / Требуется помощь! 
 > We need an English translator.  Most of the words here have been translated using google translator.  If you know Russian and English you can contribute to the project.  
