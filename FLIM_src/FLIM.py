@@ -38,16 +38,15 @@ def cat(url):
     print(textcat)
 
 databasedownload =    {
-      "update": {"name": "database.LFL",
-			     "url": "https://raw.githubusercontent.com/artegoser/Large-File-Library/master/Databases/database.LFL"}
+      "update": {"name": "database.FLIM",
+			     "url": "https://raw.githubusercontent.com/artegoser/Large-File-Library/master/Databases/database.FLIM"}
     }
 
 
 cd = os.getcwd()
 
-#версия программы
-version = "0.0.5"
-error = 0
+version = "0.0.5" #programm version
+error = 0 #check errors
 
 s = "None"
 s2 = "None"
@@ -76,12 +75,12 @@ print("")
 #quick commands ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 if s in ["install"]: #установка файла из глобальной библиотеки
     try:
-        print("I update the LFL database")
+        print("I update the FLIM database")
         hidedownload(url=databasedownload["update"]["url"], name=databasedownload["update"]["name"])
 
-        with open("database.LFL", "r", encoding = "utf-8") as data:
+        with open("database.FLIM", "r", encoding = "utf-8") as data:
             database = json.load(data)
-        os.remove("database.LFL")
+        os.remove("database.FLIM")
    
         print("The database has been updated.")
         try:
@@ -91,37 +90,96 @@ if s in ["install"]: #установка файла из глобальной б
             print("File saved in "+cd+"\\"+database[s2]["name"])
 
         except:
-            print("There is no such File in the LFL.")
+            print("There is no such File in the FLIM.")
     except:
-        print("The troubles with LFL global database")
+        print("The troubles with FLIM global database")
     #s2=#filename
    
 
 elif s in["version"]: #Узнать версию программы
-    print("Version of Large File Library - "+ version+"\n")
+    print("Version of File Library Manager - "+ version+"\n")
+
+
+elif s in["package", "packages"]: #работа с пакетами------------------------------------------------------------------------------------------------------------------------
+  try:
+    print("I update the FLIM database")
+    hidedownload(url=databasedownload["update"]["url"], name=databasedownload["update"]["name"])
+
+    with open("database.FLIM", "r", encoding = "utf-8") as data:
+        database = json.load(data)
+    os.remove("database.FLIM")
+   
+    print("The database has been updated.")
+    packages = database["packages"]
+    print("")
+
+  except:
+      print("The troubles with FLIM global database")
+      error = 1
+  try:
+      check = packages[s2]
+  except:
+      error = 1
+      print("Package does not exist")
+  
+  if error == 0:
+    if s3 in["install"]:
+        print("\nDownloading: "+ s2)
+        for title in packages[s2].keys():
+              try:
+                 print("\nDownloading: "+ packages[s2][title]["name"])
+                 download(url=packages[s2][title]["url"], name=packages[s2][title]["name"], savedir=s2+"/")    
+              except:
+                print("\nUnreadable file (wrong url or wrong syntax)")
+                print("Skipping...\n")
+        print("Package download completed")
+    elif s3 in["list"]:
+        print("All files in "+ s2 +" package----------------------------------------------------------\n")
+        for title in packages[s2].keys():
+              try:
+                print("\n    Title: "+title)
+                print("    URL: "+packages[s2][title]["url"])
+                print("    Name: "+packages[s2][title]["name"]+"\n")
+              except:
+                print("\nUnreadable file (wrong url or wrong syntax)")
+                print("Skipping...\n")
+        print("-----------------------------------------------------------------------------------")
+
+    elif s2 in["list"]:
+        print("All packages ----------------------------------------------------------------------\n")
+        for title in packages.keys():
+            print("    Package name: "+ title+"\n")
+        print("-----------------------------------------------------------------------------------")
+  else:
+    print("I cannot execute the command")
 
 #DB working with globallibrary   -------------------------------------------------------------------------------------------------------------------------------------------------------
 elif s in["db"]:   #Семейство db
 
-    try: #Обновление глобальной библиотеки
-        print("I update the LFL database")
-        hidedownload(url=databasedownload["update"]["url"], name=databasedownload["update"]["name"])
+    if s3 not in ["install", "to"]:
+        try: #Обновление глобальной библиотеки
+            print("I update the FLIM database")
+            hidedownload(url=databasedownload["update"]["url"], name=databasedownload["update"]["name"])
 
-        with open("database.LFL", "r", encoding = "utf-8") as data:
-            database = json.load(data)
-        os.remove("database.LFL")
+            with open("database.FLIM", "r", encoding = "utf-8") as data:
+                database = json.load(data)
+            os.remove("database.FLIM")
    
-        print("The database has been updated.")
-    except:
-        print("The troubles with LFL global database")
+            print("The database has been updated.")
+        except:
+            print("The troubles with FLIM global database")
 
 
     if s2 in["list"]: #Все названия ссылки и имена в глобальной библиотеке
 
             for title in database.keys():
+              try:
                 print("\nTitle: "+title)
                 print("URL: "+database[title]["url"])
                 print("Name: "+database[title]["name"]+"\n")
+              except:
+                  print("\nUnreadable file (wrong url or wrong syntax)")
+                  print("Skipping...\n")
 
     elif s2 in["info"]: #узнать ссылку и имя файла в глобальной библиотеке #s3 имя файла
         try:
@@ -129,16 +187,48 @@ elif s in["db"]:   #Семейство db
             print("URL: "+database[s3]["url"])
             print("Name: "+database[s3]["name"])
         except:
-            print("There is no such File in the LFL.")
+            print("There is no such File in the FLIM.")
 
     elif s2 in["cat"]: #прочитать файл без скачивания в глобальной библиотеке
         try:
             cat(database[s3]["url"])
         except:
-            print("There is no such File in the LFL.")
+            print("There is no such File in the FLIM.")
+
+    elif s3 in["install"]:
+         try: #Обновление глобальной библиотеки
+            print("I update the FLIM global database")
+            hidedownload(url=s2, name=databasedownload["update"]["name"])
+
+            with open("database.FLIM", "r", encoding = "utf-8") as data:
+                database = json.load(data)
+            os.remove("database.FLIM")
+   
+            print("The global database has been downloaded.")
+
+            try:
+
+                print("\nDownloading: "+ s4)
+                download(url=database[s4]["url"], name=database[s4]["name"])
+                print("File saved in "+cd+"\\"+database[s4]["name"])
+
+            except:
+                print("There is no such File in the FLIM global database.")
+
+         except:
+            print("The troubles with FLIM global database")
+
+    elif s3 in["to"]:
+      try:
+        download(url=s2, name=s4)
+        print("Global db has been downloaded")
+      except:
+          print("The troubles with FLIM global database")
 
     else:
         print("There is no such command.")
+
+    
 
 #LDB working with locallibraries ------------------------------------------------------------------------------------------------------------------------------------------------
 elif s in["ldb"]: #семейство ldb
@@ -149,9 +239,13 @@ elif s in["ldb"]: #семейство ldb
                 localdb = json.load(data)
             print("localdb "+s2+" was read")
             for title in localdb.keys():
+              try:
                 print("\nTitle: "+title)
                 print("URL: "+localdb[title]["url"])
                 print("Name: "+localdb[title]["name"]+"\n")
+              except:
+                  print("\nUnreadable file (wrong url or wrong syntax)")
+                  print("Skipping...\n")
 
         except:
             print("The "+s2+" library does not exist or it cannot be read\n")
@@ -289,7 +383,7 @@ elif s in["ldb"]: #семейство ldb
             try:
                 cat(localdb[s4]["url"])
             except:
-                print("There is no such File in the LFL.")
+                print("There is no such File in the FLIM.")
         except:
             print("The "+s2+" library does not exist or it cannot be read")
 
