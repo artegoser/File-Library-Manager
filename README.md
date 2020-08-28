@@ -1,4 +1,7 @@
-# Large-File-Library (Work on readme in progress!)
+<div align="center">
+	<h1>File-LIbrary-Manager</h1>
+</div>
+
 ![FLIM](https://raw.githubusercontent.com/artegoser/Large-File-Library/master/imgs/LFL.png "FLIM")
 ![Status](https://img.shields.io/badge/status-working-red?style=for-the-badge)
 ![GitHub](https://img.shields.io/github/license/artegoser/Large-File-Library)
@@ -6,6 +9,7 @@
 ![GitHub watchers](https://img.shields.io/github/watchers/artegoser/Large-File-Library)
 ![GitHub repo size](https://img.shields.io/github/repo-size/artegoser/Large-File-Library)
 ![GitHub All Releases](https://img.shields.io/github/downloads/artegoser/Large-File-Library/total)
+(Work on readme in progress!)
 ## More About 
 CLI application for reading and creating FLIM 
 libraries.  The standard library will be updated 
