@@ -8,7 +8,7 @@
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/artegoser/Large-File-Library)
 ![GitHub watchers](https://img.shields.io/github/watchers/artegoser/Large-File-Library)
 ![GitHub repo size](https://img.shields.io/github/repo-size/artegoser/Large-File-Library)
-![GitHub All Releases](https://img.shields.io/github/downloads/artegoser/Large-File-Library/total)
+![GitHub All Releases](https://img.shields.io/github/downloads/artegoser/Large-File-Library/total)  
 (Work on readme in progress!)
 ## More About 
 CLI application for reading and creating FLIM 
