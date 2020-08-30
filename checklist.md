@@ -13,6 +13,6 @@
 
 ### Code fixes! 
 
-> * Exception handlers
-> * Optimizing
-> * More comments !!!
+* Exception handlers
+* Optimizing
+* More comments !!!
