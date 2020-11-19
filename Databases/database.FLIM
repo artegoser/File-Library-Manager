@@ -21,11 +21,7 @@
     },
     "genernationen": {
         "name": "GenerNationEN.py",
-        "url": "https://raw.githubusercontent.com/artegoser/GenerNation/master/GenerNation/GenerNationEN.py"
-    },
-    "genernationru": {
-        "name": "GenerNationRU.py",
-        "url": "https://raw.githubusercontent.com/artegoser/GenerNation/master/GenerNation/GenerNationRU.py"
+        "url": "https://raw.githubusercontent.com/artegoser/GenerNation/master/GenerNation/GenerNation.py"
     },
     "tardis0.5": {
         "name": "tardis0.5.zip",
