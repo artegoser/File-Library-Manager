@@ -19,8 +19,8 @@
         "name": "database.FLIM",
         "url": "https://raw.githubusercontent.com/artegoser/Large-File-Library/master/Databases/database.FLIM"
     },
-    "genernationen": {
-        "name": "GenerNationEN.py",
+    "genernation": {
+        "name": "GenerNation.py",
         "url": "https://raw.githubusercontent.com/artegoser/GenerNation/master/GenerNation/GenerNation.py"
     },
     "tardis0.5": {
