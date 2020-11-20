@@ -24,17 +24,54 @@ class FLIM():
             print("--------")
             print("Title:", arg, "\nurl:", url,"\nname:", name)
             print("--------")
+            
     def getInfo(self, args):
         for arg in args.title:
             url, name = self.getItem(arg)
             print("--------")
             print("Title:", arg, "\nurl:", url,"\nname:", name)
             print("--------")
+            
     def getCat(self, args):
         for arg in args.title:
             url, name = self.getItem(arg)
             print(self.cat(url))
+            
+    def toLocal(self, args):
+        url = args.titles[0]
+        name = args.titles[1]
+        self.download(url, name)
+        print("Done!")
+        
+    def ldbCreate(self, args):
+        name = args.title
+        with open(name, "w") as data:
+            json.dump({}, data)
+        print("Localdb "+name+" was created")
+        
+    def ldbAdd(self, args):
+        
+        ldbname = args.titles[0] 
+        title = args.titles[1]
+        name = args.titles[2]
+        url = args.titles[3]
+        
+        new_block = {
+               title:{
+                   "name": name,
+                   "url": url
+                   }
+            }
+        
+        with open(ldbname, "r") as data:
+                localdb = json.load(data)
 
+
+        localdb.update(new_block)
+        with open(ldbname, "w") as data:
+            json.dump(localdb, data)
+        print("Block "+title+", was created")
+        
     def getItem(self, title):
         if title == "packages":
             return "", ""
