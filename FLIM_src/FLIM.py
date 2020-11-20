@@ -18,8 +18,8 @@ family_parser = families.add_parser('db', help='working with global FLIM')
 db = family_parser.add_subparsers(title='db')
 
 #db list------------------------------------------------------------------
-db_parser = db.add_parser('list', help="Reads the title, name and link to a file in the global library")
-db_parser.add_argument("-none")
+db_parser = db.add_parser('list', help="Gets file names, links to them and names from the global library")
+#db_parser.add_argument("-none")
 
 db_parser.set_defaults(func=flim.liste)
 
@@ -29,8 +29,14 @@ db_parser.add_argument("title", nargs="+", help='filename in FLIM db')
 
 db_parser.set_defaults(func=flim.getInfo)
 
+#db cat-------------------------------------------------------------------
+db_parser = db.add_parser('cat', help="Reading a file without downloading in the global library")
+db_parser.add_argument("title", nargs="+", help='filename in FLIM db')
 
-parser.add_argument("-v", "--version", action="count", help="version", default=0)
+db_parser.set_defaults(func=flim.getCat)
+
+
+parser.add_argument("-v", "--version", action="version", version="FLIM version - "+info.version, help="show this version message and exit")
 
 args = parser.parse_args()
 
@@ -38,7 +44,4 @@ args = parser.parse_args()
 if not vars(args):
         parser.print_usage()
 else:
-    if args.version >= 1:
-        print("FLIM version -", info.version)
-    else:
-        args.func(args)
+    args.func(args)

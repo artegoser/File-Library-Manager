@@ -30,6 +30,10 @@ class FLIM():
             print("--------")
             print("Title:", arg, "\nurl:", url,"\nname:", name)
             print("--------")
+    def getCat(self, args):
+        for arg in args.title:
+            url, name = self.getItem(arg)
+            print(self.cat(url))
 
     def getItem(self, title):
         if title == "packages":
@@ -63,6 +67,6 @@ class FLIM():
                     f.write(data)
 
     def cat(self, url):
-        return requests.get(url, stream=True).text()
+        return requests.get(url, stream=True).text
     def json(self, url):
         return requests.get(url, stream=True).json()
